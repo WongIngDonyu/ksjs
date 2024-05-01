@@ -1,38 +1,123 @@
-.App {
-  text-align: center;
+.blog {
+  font-family: Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header {
+  background-color: #006b09;
+  border-bottom: 2px solid #07b148;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+  height: 50px;
+  align-items: center;
+  padding-left: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.main-aside {
+  display: flex;
+  margin: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+aside {
+  flex: 1;
+  padding: 20px;
+  margin-left: 20px;
+  border: dashed 0.1rem #006b09;
+  border-radius: 15px;
+  box-shadow: 0.5em 1em 0.5em 0em rgba(64, 73, 59, 0.281);
+}
+
+.post-list {
+  flex: 3;
+  padding: 20px;
+  border: dashed 0.1rem #006b09;
+  border-radius: 15px;
+  box-shadow: 0.5em 1em 0.5em 0 rgba(64, 73, 59, 0.281);
+  margin-right: 20px;
+}
+
+.post-list h2 {
+  color: black;
+  border-bottom: 2px solid #07b148;
+}
+
+.post {
+  border-bottom: 1px solid #07b148;
+  padding: 10px 0;
+}
+
+.create-section h2,
+.archive-section h2 {
+  color: black;
+  border-bottom: 2px solid #07b148;
+}
+
+.create-section textarea {
+  width: 96%;
+  padding: 8px;
+  border: 2px solid #40493B;
+}
+
+.create-section input {
+  width: 97%;
+  border: none;
+  border-bottom: 1px solid #40493B;
+}
+
+.form-section label {
+  font-size: 20px;
+  margin: 3px;
+}
+
+.create-section,
+.form-section {
+  margin-bottom: 15px;
+}
+
+.create-button {
+  background-color: #006b09;
+  color: white;
+  padding: 9px 19px ;
+  font-size: 17px;
+  border: none;
+  border-radius: 15px;
+  font-weight: bold;
+}
+
+.archive-section {
+  color: black;
+}
+
+.delete-button {
+  background-color: darkred;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  float: right;
+  font-size: 14px;
+}
+
+.archive-button {
+  background-color: gray;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-left: 10px;
+  float: right;
+  font-size: 14px;
+}
+
+.postInfo {
+  margin: 5px 0;
+}
+
+.blog-post-article {
+  clear: both;
+}
+
+.archive-section li {
+  list-style-type: square;
 }

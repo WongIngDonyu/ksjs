@@ -1,25 +1,39 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import CreatePost from "./CreatePost";
+import PostList from "./PostList";
+import Header from "./Header";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function Blog() {
+    const [posts, setPosts] = useState([]);
+    const [archive, setArchive] = useState([]);
+
+    const addPost = (newPost) => {
+        setPosts([...posts, newPost]);
+    };
+
+    const deletePost = (index) => {
+        const updatedPosts = [...posts];
+        updatedPosts.splice(index, 1);
+        setPosts(updatedPosts);
+    };
+
+    const archivePost = (index) => {
+        const archivedPostTitle = posts[index].title;
+        const updatedPosts = [...posts];
+        updatedPosts.splice(index, 1);
+        setPosts(updatedPosts);
+        setArchive([...archive, archivedPostTitle]);
+    };
+
+    return (
+        <body className="blog">
+        <Header/>
+        <section className="main-aside">
+            <PostList posts={posts} deletePost={deletePost} archivePost={archivePost}/>
+            <CreatePost onAddPost={addPost} archive={archive}/>
+        </section>
+        </body>
+    );
 }
-
-export default App;
+export default Blog;
